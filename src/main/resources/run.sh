@@ -119,6 +119,8 @@ if [ "${consolestart}" -eq 1 ]; then
    else
       echo "Starting the application in console mode"
       java  -Dosgi.install.area=${basedir} \
+            -Djava.naming.factory.url.pkgs="org.eclipse.jetty.jndi" \
+	    -Djava.naming.factory.initial="org.eclipse.jetty.jndi.InitialContextFactory" \
             -Dosgi.configuration.area="${basedir}/configuration" \
             -Dosgi.logfile="${basedir}/logs/osgi.log" \
             -Dlogback.configurationFile="$basedir/configuration/logback.xml" \

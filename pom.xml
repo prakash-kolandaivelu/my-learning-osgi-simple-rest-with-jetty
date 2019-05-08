@@ -8,6 +8,7 @@
   <properties>
     <projectName>my-learning-osgi-simple-rest-with-jetty</projectName>
     <release.version>0.1</release.version>
+    <jetty.version>9.4.14.v20181114</jetty.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
@@ -67,7 +68,7 @@
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-servlet</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>javax.servlet</groupId>
@@ -92,22 +93,22 @@
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-servlet</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-util</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-jndi</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-plus</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.osgi</groupId>
@@ -122,52 +123,52 @@
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-annotations</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-http</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-io</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-security</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-server</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-deploy</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-webapp</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-xml</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-jmx</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty.osgi</groupId>
     <artifactId>jetty-osgi-boot</artifactId>
-    <version>9.4.14.v20181114</version>
+    <version>${jetty.version}</version>
 </dependency>
 <dependency>
     <groupId>org.apache.felix</groupId>
