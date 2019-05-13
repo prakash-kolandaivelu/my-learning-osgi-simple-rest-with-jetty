@@ -8,7 +8,8 @@
   <properties>
     <projectName>my-learning-osgi-simple-rest-with-jetty</projectName>
     <release.version>0.1</release.version>
-    <jetty.version>9.4.14.v20181114</jetty.version>
+    <jetty.version>9.4.18.v20190429</jetty.version>
+    <jersey.version>1.19.4</jersey.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
@@ -83,12 +84,12 @@
 <dependency>
     <groupId>org.ow2.asm</groupId>
     <artifactId>asm</artifactId>
-    <version>5.0.3</version>
+    <version>7.1</version>
 </dependency>
 <dependency>
     <groupId>javax.annotation</groupId>
     <artifactId>javax.annotation-api</artifactId>
-    <version>1.2</version>
+    <version>1.3.2</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.jetty</groupId>
@@ -203,12 +204,12 @@
 <dependency>
     <groupId>com.sun.jersey</groupId>
     <artifactId>jersey-server</artifactId>
-    <version>1.19.4</version>
+    <version>${jersey.version}</version>
 </dependency>
 <dependency>
     <groupId>com.sun.jersey</groupId>
     <artifactId>jersey-core</artifactId>
-    <version>1.19.4</version>
+    <version>${jersey.version}</version>
 </dependency>
 <dependency>
     <groupId>javax.ws.rs</groupId>
@@ -238,7 +239,16 @@
             <Bundle-SymbolicName>
               ${pom.artifactId}
             </Bundle-SymbolicName>
+            <Import-Package>
+               my.learnings.osgi.rs,
+               javax.ws.rs,
+               javax.ws.rs.core,
+               org.slf4j,
+               com.sun.jersey.spi.container.servlet,
+               com.sun.jersey.core.provider
+             </Import-Package>
            <!--  <Bundle-Activator>my.learnings.osgi.rs.activator.Activator</Bundle-Activator>  -->
+           <Jaxrs-Resources>,${classes;ANNOTATION;javax.ws.rs.Path}</Jaxrs-Resources>
            </instructions>
          </configuration>
         </plugin>
