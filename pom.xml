@@ -249,6 +249,7 @@
              </Import-Package>
            <!--  <Bundle-Activator>my.learnings.osgi.rs.activator.Activator</Bundle-Activator>  -->
            <Jaxrs-Resources>,${classes;ANNOTATION;javax.ws.rs.Path}</Jaxrs-Resources>
+           <Web-ContextPath>/test</Web-ContextPath>
            </instructions>
          </configuration>
         </plugin>
