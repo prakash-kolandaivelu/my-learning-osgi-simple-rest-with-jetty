@@ -57,6 +57,11 @@
         <include>com.sun.jersey:jersey-server</include>
         <include>com.sun.jersey:jersey-core</include>
         <include>javax.ws.rs:jsr311-api</include>
+        <include>com.fasterxml.jackson.core:jackson-core</include>
+        <include>com.fasterxml.jackson.core:jackson-databind</include>
+        <include>com.fasterxml.jackson.core:jackson-annotations</include>
+        <include>io.jsonwebtoken:jjwt</include>
+        <include>org.json:json</include>
         <include>my.learnings:my-learning-osgi-simple-rest-with-jetty</include>
       </includes>
       <unpack>false</unpack>

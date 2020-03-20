@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Index</title>
+</head>
+<body>
+	Loading a web application..!!!
+	<form action="/test/login" method="POST" name="nyForm">
+		<input type="text" name="username" placeholder="enter username" /> <input
+			type="password" name="password" placeholder="enter password" />
+		<button type="button" onclick="submitform()">Click Here..</button>
+		<p id="demo"></p>
+		<h3 id="user"></h3>
+		<div id="getStatus">
+			<button type="button" onclick="getJSONStatus()">Get Json
+				status</button>
+			<button type="button" onclick="getStatus()">Get Status</button>
+		</div>
+	</form>
+	<script type="text/javascript">
+		var form = document.getElementsByName('nyForm')[0];
+		var xhr = new XMLHttpRequest();
+		var key = "";
+		function submitform() {
+			xhr.open(form.method, form.action, true);
+			xhr.setRequestHeader('Content-Type',
+					'application/json; charset=UTF-8');
+			var auth = {
+				"username" : document.getElementsByName("username")[0].value,
+				"password" : document.getElementsByName("password")[0].value,
+			};
+			xhr.send(JSON.stringify(auth));
+			xhr.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					if (key == "") {
+						document.getElementById("demo").innerHTML = this.responseText;
+						key = this.responseText;
+					}
+					document.getElementById("getStatus").style.display = "block";
+				} else {
+					document.getElementById("getStatus").style.display = "none";
+				}
+			}
+		}
+
+		function getJSONStatus() {
+			var authKey = document.getElementById("demo").innerHTML;
+			xhr.open("GET", "/test/test/jsonstatus", true);
+			xhr.setRequestHeader('Content-Type',
+					'application/json; charset=UTF-8');
+			xhr.setRequestHeader('Authorization', authKey)
+			xhr.send();
+			xhr.onload = function() {
+				document.getElementById("user").innerHTML = this.response;
+			}
+			xhr.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("user").innerHTML = this.response;
+				} else {
+					document.getElementById("user").innerHTML = this.responseText;
+				}
+				document.getElementById("getStatus").style.display = "block";
+			}
+		}
+
+		function getStatus() {
+			var authKey = document.getElementById("demo").innerHTML;
+			xhr.open("GET", "/test/test/status", true);
+			xhr.setRequestHeader('Content-Type',
+					'application/json; charset=UTF-8');
+			xhr.setRequestHeader('Authorization', authKey)
+			xhr.send();
+			xhr.onload = function() {
+				document.getElementById("user").innerHTML = this.response;
+			}
+			xhr.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("user").innerHTML = this.responseText;
+				} else {
+					document.getElementById("user").innerHTML = this.responseText;
+				}
+				document.getElementById("getStatus").style.display = "block";
+			}
+		}
+	</script>
+</body>
+</html>

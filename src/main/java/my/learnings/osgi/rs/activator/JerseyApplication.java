@@ -8,8 +8,13 @@ import javax.ws.rs.core.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import my.learnings.osgi.rs.HttpRequestWrapper;
+import my.learnings.osgi.rs.JWTAuthenticationFilter;
+import my.learnings.osgi.rs.JWTAuthorizationFilter;
 import my.learnings.osgi.rs.JsonResource;
+import my.learnings.osgi.rs.SecurityConstants;
 import my.learnings.osgi.rs.StatusResource;
+import my.learnings.osgi.rs.User;
 
 public class JerseyApplication extends Application {
     
@@ -20,6 +25,11 @@ public class JerseyApplication extends Application {
         Set<Class<?>> result = new HashSet<Class<?>>();
         result.add(JsonResource.class);
         result.add(StatusResource.class);
+        result.add(HttpRequestWrapper.class);
+        result.add(JWTAuthenticationFilter.class);
+        result.add(JWTAuthorizationFilter.class);
+        result.add(SecurityConstants.class);
+        result.add(User.class);
         return result;
     }
 }

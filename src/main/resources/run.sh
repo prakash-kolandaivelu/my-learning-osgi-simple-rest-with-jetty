@@ -118,7 +118,8 @@ if [ "${consolestart}" -eq 1 ]; then
       echo "Application is already running !! PID:" $retval
    else
       echo "Starting the application in console mode"
-      java  -Dosgi.install.area=${basedir} \
+      java  -Xdebug -Xrunjdwp:transport=dt_socket,address=8088,server=y,suspend=n \
+      	    -Dosgi.install.area=${basedir} \
             -Djava.naming.factory.url.pkgs="org.eclipse.jetty.jndi" \
 	    -Djava.naming.factory.initial="org.eclipse.jetty.jndi.InitialContextFactory" \
             -Dosgi.configuration.area="${basedir}/configuration" \
